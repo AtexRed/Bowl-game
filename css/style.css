@@ -1,0 +1,150 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  height: 100vh;
+  background: url('http://ipic.su/img/img7/fs/dendi(1).1571830092.png') center top/ cover no-repeat;
+}
+
+.plate {
+  position: absolute;
+  left: 50%;
+  bottom: -100%;
+  outline: none;
+}
+
+.plate-anim-1 {
+  animation: move-plate-1 4s ease 1s 1 forwards;
+}
+.plate-anim-2 {
+  animation: move-plate-2 6s ease 4s 1 forwards;
+}
+.plate-anim-3 {
+  animation: move-plate-3 8s ease 6s forwards;
+}
+.plate-anim-4 {
+  animation: move-plate-4 7s ease 8s 1 forwards;
+}
+.plate-anim-5 {
+  animation: move-plate-5 5s ease 7s 1 forwards;
+}
+.plate:before {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(30deg);
+  box-shadow: inset 6px -8px 20px rgba(0,0,0,0.8);
+}
+
+.plate:checked {
+  opacity: 0;
+  counter-increment: list;
+}
+
+.plate:checked:before {
+  width: 0;
+  height: 0;
+}
+
+.count {
+  padding: 10px;
+  max-width: 100px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 27px;
+}
+
+.score_count:after {
+  content: counter(list);
+  font-size: 37px;
+}
+
+@keyframes move-plate-1 {
+  0% {
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, -50%) rotateX(30deg);
+  }
+  50% {
+    bottom: 60%;
+  }
+  100% {
+    left: 40%;
+    bottom: 50%;
+    transform: translate(-50%, -50%) rotateX(30deg) scale(0);
+  }
+}
+
+@keyframes move-plate-2 {
+  0% {
+    bottom: 0%;
+    left: 20%;
+    transform: translate(-50%, -50%) rotateX(30deg);
+  }
+  50% {
+    bottom: 80%;
+    left: 40%;
+  }
+  100% {
+    bottom: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(30deg) scale(0);
+  }
+}
+
+@keyframes move-plate-3 {
+  0% {
+    bottom: 0%;
+    right: 20%;
+    transform: translate(-50%, -50%) rotateX(30deg);
+  }
+  50% {
+    bottom: 40%;
+  }
+  100% {
+    bottom: 30%;
+    right: 40%;
+    transform: translate(-50%, -50%) rotateX(30deg) scale(0);
+  }
+}
+
+@keyframes move-plate-4 {
+  0% {
+    bottom: 0%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotateX(30deg);
+  }
+  50% {
+    bottom: 60%;
+    left: 60%;
+  }
+  100% {
+    bottom: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(30deg) scale(0);
+  }
+}
+
+@keyframes move-plate-5 {
+  0% {
+    bottom: 0%;
+    left: 20%;
+    transform: translate(-50%, -50%) rotateX(30deg);
+  }
+  50% {
+    bottom: 70%;
+    left: 50%;
+  }
+  100% {
+    bottom: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%) rotateX(30deg) scale(0);
+  }
+}
